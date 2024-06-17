@@ -1,0 +1,23 @@
+#include "STD_TYPES.h"
+#include "DIO.h"
+#include "SEVEN_SEGMENT.h"
+
+void SEVEN_SEGMENT_WriteOn7Segment(u8 u8LcdValCopy){
+	switch(u8LcdValCopy){
+	case '0': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_0); break;
+	case '1': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_1); break;
+	case '2': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_2); break;
+	case '3': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_3); break;
+	case '4': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_4); break;
+	case '5': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_5); break;
+	case '6': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_6); break;
+	case '7': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_7); break;
+	case '8': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_8); break;
+	case '9': DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_NUMBER_9); break;
+	default : DIO_SetPortValue(SEVEN_SEGMENT_PORT,SEVEN_SEGMENT_TURN_OFF); break;
+	}
+}
+
+void SEVEN_SEGMENT_Init(){
+	DIO_SetPortDirection(SEVEN_SEGMENT_PORT,ALL_OUTPUT);
+}
