@@ -1,0 +1,12 @@
+include all files in the project directory to be read by the main.c
+
+include the following in the main file
+#include "FreeRTOS.h"
+#include "task.h"
+
+(You may need to include "FreeRTOSConfig.h" as well)
+
+IMPORTANT: in the FreeRTOSConfig.h, 
+put #define configUSE_IDLE_HOOk to 0 instead of 1 (in case you use the kernel downloaded from the freertos site)
+
+You are now using FreeRTOS Kernel on ATMega323, start coding! :D
